@@ -5,8 +5,7 @@ var express           = require('express'),
     methodOverride    = require('method-override'),
     exrpressSanitizer = require('express-sanitizer');
 
-var DataBase =  "mongodb://MusaddiqurRahman:asdASD123@ds157544.mlab.com:57544/blogsite" || "mongodb://localhost:27017/blogsite";
-mongoose.connect(DataBase);
+mongoose.connect("mongodb://MusaddiqurRahman:asdASD123@ds157544.mlab.com:57544/blogsite");
 //app config
 app.set('view engine','ejs');
 app.use(express.static('public'));
