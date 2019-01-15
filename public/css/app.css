@@ -10,3 +10,7 @@ i.icon{
 #delete{
   display: inline;
 }
+
+.Image img{
+  height: 200px;
+}

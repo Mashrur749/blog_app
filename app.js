@@ -25,7 +25,7 @@ var blogSchema = new mongoose.Schema({
       }
 });
 
-var Blog = mongoose.model('Blog',blogSchema)
+var Blog = mongoose.model('Blog',blogSchema);
 //
 // Blog.create({
 //   title: 'Test Blog',
@@ -34,9 +34,7 @@ var Blog = mongoose.model('Blog',blogSchema)
 // })
 
 app.get('/',function(req,res){
-
   res.redirect('/blogs');
-
 })
 
 
@@ -131,6 +129,6 @@ app.delete('/blogs/:id',function(req,res){
 
 
 
-app.listen('4000',function(){
+app.listen('65000',function(){
   console.log('Server Has Started');
 });
