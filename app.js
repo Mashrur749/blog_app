@@ -2,11 +2,11 @@ var express           = require('express'),
     app               = express(),
     mongoose          = require('mongoose'),
     bodyParser        = require('body-parser'),
-    methodOverride    = require('method-override');
+    methodOverride    = require('method-override'),
     exrpressSanitizer = require('express-sanitizer');
 
-mongoose.connect('mongodb://localhost/restful_blog_app');
-
+var DataBase = process.env.DATABASEURL || "mongodb:://MusaddiqurRahman:asdASD123@ds157544.mlab.com:57544/blogsite";
+mongoose.connect(DataBase);
 //app config
 app.set('view engine','ejs');
 app.use(express.static('public'));
@@ -127,8 +127,8 @@ app.delete('/blogs/:id',function(req,res){
 
 
 
+var PORT = process.env.PORT || 65000;
 
-
-app.listen('65000',function(){
+app.listen(PORT, process.env.HOST,function(){
   console.log('Server Has Started');
 });
