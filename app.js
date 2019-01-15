@@ -5,7 +5,7 @@ var express           = require('express'),
     methodOverride    = require('method-override'),
     exrpressSanitizer = require('express-sanitizer');
 
-var DataBase = process.env.DATABASEURL || "mongodb:://MusaddiqurRahman:asdASD123@ds157544.mlab.com:57544/blogsite";
+var DataBase = "mongodb://localhost:27017/blogsite" || "mongodb:://MusaddiqurRahman:asdASD123@ds157544.mlab.com:57544/blogsite";
 mongoose.connect(DataBase);
 //app config
 app.set('view engine','ejs');
@@ -26,12 +26,6 @@ var blogSchema = new mongoose.Schema({
 });
 
 var Blog = mongoose.model('Blog',blogSchema);
-//
-// Blog.create({
-//   title: 'Test Blog',
-//   image: 'https://cdn.pixabay.com/photo/2014/05/03/00/42/vw-camper-336606__340.jpg',
-//   body: 'This is the test blog'
-// })
 
 app.get('/',function(req,res){
   res.redirect('/blogs');
